@@ -1,0 +1,32 @@
+$schema: https://learning-contents.org/schemas/parameterized-code-tracing/0.1.0
+license: MIT
+locale: en-US
+id: parameterized_code_tracing_css
+source: style.css
+title: Parameterized CSS Style Inspection
+description: Trace and inspect CSS color values and layout properties.
+authors:
+  - first: First
+    last: Last
+    email: author@example.com
+    affiliation: University
+pedagogy:
+  activity: parameterized-code-tracing
+  difficulty: novice
+  prereq_topics: [basics]
+  topics: [basics, css3, flexbox]
+runtime:
+  language: css
+statement: |
+  Determine the evaluated stylesheet metrics and inspect the CSS properties for the Bank Account card.
+elements:
+  - type: parameter
+    location:
+      context: 'max-width: 360px;'
+      snippet: "360px"
+    values: ['360px', '400px', '480px']
+  - type: parameter
+    location:
+      context: 'background-color: #2563eb;'
+      snippet: "#2563eb"
+    values: ['#2563eb', '#16a34a', '#7c3aed']

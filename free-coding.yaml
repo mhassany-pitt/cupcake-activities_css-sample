@@ -1,0 +1,74 @@
+$schema: https://learning-contents.org/schemas/free-coding/0.1.0
+source: style.css
+license: MIT
+locale: en-US
+id: free_coding_bank_account_css
+title: Customize the Card Styling
+description: Style and customize colors, typography, and hover effects in CSS.
+authors:
+  - first: Jone
+    last: Doe
+    email: jone.doe@example.com
+    affiliation: University of John Doe
+pedagogy:
+  activity: free-coding
+  difficulty: novice
+  prereq_topics: [css3]
+  topics: [css3, styling, colors]
+runtime:
+  language: css
+statement: |
+  Customize the `BankAccount` card stylesheet by editing the button colors and padding properties.
+executions:
+  - title: Evaluated Stylesheet
+    stdin: []
+    stdout: |-
+      CSS Evaluated: 1042 bytes
+    console: |-
+      CSS Evaluated: 1042 bytes
+    status: pass
+elements:
+  - type: locked
+    location:
+      snippet: |-
+        .bank-card {
+          max-width: 360px;
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 12px;
+          padding: 20px;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+  - type: editable
+    location:
+      snippet: |-
+        .btn-deposit {
+          background-color: #2563eb;
+          color: #ffffff;
+        }
+
+        .btn-deposit:hover {
+          background-color: #1d4ed8;
+        }
+
+        .btn-withdraw {
+          background-color: #f1f5f9;
+          color: #334155;
+        }
+
+        .btn-withdraw:hover {
+          background-color: #e2e8f0;
+        }
+    placeholder: |-
+      /* Customize deposit and withdraw button styles here */
+testcases:
+  - title: Stylesheet Compilation Test
+    visible: true
+    stdin: []
+    stdout: |-
+      CSS Evaluated: 1042 bytes
+    console: |-
+      CSS Evaluated: 1042 bytes

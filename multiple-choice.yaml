@@ -1,0 +1,54 @@
+$schema: https://learning-contents.org/schemas/multiple-choice-question/0.1.0
+license: MIT
+locale: en-US
+id: mcq_css_flexbox_alignment
+title: CSS Flexbox Header Alignment
+description: Choose the correct Flexbox property to distribute items with space between them.
+authors:
+  - first: Jone
+    last: Doe
+    email: jone.doe@example.com
+    affiliation: University of John Doe
+pedagogy:
+  activity: multiple-choice-question
+  difficulty: novice
+  prereq_topics:
+    - css3
+  topics:
+    - css3
+    - flexbox
+    - layout
+include_choices: 3
+question: |
+  Given a flex container (`display: flex`), which property should be used along the main axis to push the first child to the far left and the last child to the far right?
+choices:
+  - body: |
+      ```css
+      justify-content: space-between;
+      ```
+    role: solution
+    include: always
+    order: 1
+    explanations:
+      - body: |
+          Correct. `justify-content: space-between` distributes remaining space evenly between the flex items, placing the outer items flush with the container edges.
+  - body: |
+      ```css
+      align-items: space-between;
+      ```
+    role: distractor
+    explanations:
+      - body: |
+          Incorrect. `align-items` operates along the cross axis (vertically in row layout) and does not support `space-between` in standard single-line flex containers.
+  - body: |
+      ```css
+      justify-content: center;
+      ```
+    role: distractor
+    explanations:
+      - body: |
+          Incorrect. `justify-content: center` clusters all children together in the middle of the container rather than separating them to opposite edges.
+  - body: None
+    role: distractor
+    include: always
+    order: 2

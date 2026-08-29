@@ -1,0 +1,48 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: style.css
+license: MIT
+locale: en-US
+id: we_bank_account_css
+title: Bank Account Card Styling
+description: Learn how to use modern CSS Flexbox and styling properties to style a Bank Account UI card.
+authors:
+  - first: Jone
+    last: Doe
+    email: jone.doe@example.com
+    affiliation: University of John Doe
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics:
+    - css3
+    - flexbox
+    - styling
+runtime:
+  language: css
+statement: |
+  This worked example demonstrates how to style a **Bank Account Card** component in CSS3 using Flexbox layout, typography, and interactive button states. We will examine:
+  1. Card container layout and borders (`.bank-card`)
+  2. Space-between alignment in headers (`.account-header`)
+  3. Interactive buttons and hover effects (`.btn-deposit`)
+executions:
+  - title: Evaluated Stylesheet
+    stdin: []
+    stdout: |-
+      CSS Evaluated: 1042 bytes
+    console: |-
+      CSS Evaluated: 1042 bytes
+    status: pass
+elements:
+  - type: explanation
+    location:
+      snippet: "display: flex;\n  flex-direction: column;\n  gap: 16px;"
+    explanations:
+      - body: |
+          Using `display: flex` combined with `flex-direction: column` and `gap: 16px` automatically stacks internal sections vertically with consistent spacing between each child element.
+  - type: explanation
+    location:
+      snippet: "display: flex;\n  justify-content: space-between;\n  align-items: center;"
+    explanations:
+      - body: |
+          `justify-content: space-between` pushes the account owner name to the left and the active status badge to the far right, while `align-items: center` centers them along the vertical axis.

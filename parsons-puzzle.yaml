@@ -1,0 +1,107 @@
+$schema: https://learning-contents.org/schemas/parsons-puzzles/0.1.0
+license: MIT
+locale: en-US
+id: pp_bank_account_css
+source: style.css
+title: Arrange the Card Stylesheet
+description: Arrange the CSS rule blocks to style the Bank Account UI card.
+authors:
+  - first: Jone
+    last: Doe
+    email: jone.doe@example.com
+    affiliation: University of John Doe
+pedagogy:
+  activity: parsons-puzzles
+  difficulty: novice
+  prereq_topics: [css3, rules]
+  topics: [css3, rules, selectors]
+runtime:
+  language: css
+statement: |
+  Rearrange the CSS rule blocks to construct a clean, well-ordered stylesheet. Make sure to:
+  1. Define the card container layout (`.bank-card`)
+  2. Define the header alignment (`.account-header`)
+  3. Define the action button styling (`.account-actions`)
+executions:
+  - title: Evaluated Stylesheet
+    stdout: |-
+      CSS Evaluated: 1042 bytes
+    console: |-
+      CSS Evaluated: 1042 bytes
+elements:
+  - type: block
+    location:
+      snippet: |2-
+        .bank-card {
+          max-width: 360px;
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 12px;
+          padding: 20px;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+    choices:
+      - snippet: |-
+          .bank-card {
+            max-width: 360px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+          }
+        role: solution
+        explanations:
+          - body: |
+              Correctly defines dimensions, border radius, shadow, and vertical Flexbox layout for the card.
+  - type: block
+    location:
+      snippet: |2-
+        .account-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+    choices:
+      - snippet: |-
+          .account-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        role: solution
+        explanations:
+          - body: |
+              Correctly aligns the header elements using Flexbox `space-between` and `align-items: center`.
+  - type: block
+    location:
+      snippet: |2-
+        .account-actions {
+          display: flex;
+          gap: 8px;
+        }
+    choices:
+      - snippet: |-
+          .account-actions {
+            display: flex;
+            gap: 8px;
+          }
+        role: solution
+        explanations:
+          - body: |
+              Correctly aligns the action buttons side-by-side with an `8px` gap.
+      - snippet: |-
+          .account-actions {
+            display: block;
+            float: left;
+          }
+        role: distractor
+        explanations:
+          - body: |
+              Legacy CSS floats are fragile and prone to collapse; modern responsive web layout uses Flexbox or CSS Grid.

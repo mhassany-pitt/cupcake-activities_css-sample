@@ -1,0 +1,67 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: style.css
+license: MIT
+locale: en-US
+id: cc_bank_account_css
+title: Complete the Card Stylesheet
+description: Fill in the missing CSS Flexbox properties and styling attributes.
+authors:
+  - first: Jone
+    last: Doe
+    email: jone.doe@example.com
+    affiliation: University of John Doe
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics:
+    - css3
+    - flexbox
+runtime:
+  language: css
+statement: |
+  Complete the `BankAccount` card stylesheet by filling in the missing Flexbox properties and button colors. Focus on:
+  - Setting header alignment to push items to opposite ends (`space-between`)
+  - Specifying the primary button background color
+executions:
+  - title: Evaluated Stylesheet
+    stdin: []
+    stdout: |-
+      CSS Evaluated: 1042 bytes
+    console: |-
+      CSS Evaluated: 1042 bytes
+    stderr: ""
+    status: pass
+elements:
+  - type: blank
+    location:
+      context: "justify-content: space-between;"
+      snippet: "space-between"
+      nth: 1
+    choices:
+      - snippet: "space-between"
+        role: solution
+        explanations:
+          - body: |
+              `space-between` distributes child items evenly along the main axis, placing the first item on the leading edge and the last item on the trailing edge.
+      - snippet: "center"
+        role: distractor
+        explanations:
+          - body: |
+              `center` would pack both the owner heading and badge together in the center of the card header rather than separating them.
+  - type: blank
+    location:
+      context: "background-color: #2563eb;"
+      snippet: "#2563eb"
+      nth: 1
+    choices:
+      - snippet: "#2563eb"
+        role: solution
+        explanations:
+          - body: |
+              `#2563eb` provides a vibrant, accessible primary blue hue for the deposit action button.
+      - snippet: "transparent"
+        role: distractor
+        explanations:
+          - body: |
+              A `transparent` background with white text would make the button label invisible on light backgrounds.
