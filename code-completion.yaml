@@ -4,7 +4,7 @@ license: MIT
 locale: en-US
 id: cc_bank_account
 title: Complete the BankAccount CSS Rules
-description: Fill in essential CSS layout values, color tokens, typography weights, and pseudo-class selectors to style a bank account card.
+description: Fill in essential CSS layout values, axis directions, cursor cues, and pseudo-class selectors to style a bank account card.
 authors:
   - first: Jone
     last: Doe
@@ -19,18 +19,17 @@ pedagogy:
   topics:
     - css3
     - flexbox
-    - typography
+    - layout
     - pseudo-classes
-    - transitions
-    - ui-components
+    - interactivity
 runtime:
   language: css
 statement: |
-  Complete the `BankAccount` card styles by selecting the correct CSS values, hex colors, font weights, and pseudo-class selectors.
+  Complete the `BankAccount` card styles by selecting the correct CSS layout properties, axis directions, interactive cursor cues, and pseudo-class selectors.
   Make sure to:
-  1. Configure the card container as a Flexbox layout.
-  2. Apply the semantic green color for deposit transactions.
-  3. Set a bold font weight for the primary balance display.
+  1. Configure the card container as a Flexbox layout context.
+  2. Set the main layout axis to stack child sections vertically.
+  3. Set the button cursor style to indicate interactivity.
   4. Specify the interactive hover pseudo-class on the deposit button.
 executions:
   - title: Bob's Account
@@ -52,7 +51,7 @@ elements:
         role: solution
         explanations:
           - body: |
-              Correct! `display: flex` establishes a Flexible Box layout context, enabling column direction and uniform gap spacing.
+              Correct! `display: flex` establishes a Flexible Box layout context, enabling flex direction and uniform gap spacing.
       - snippet: "grid"
         role: distractor
         explanations:
@@ -70,56 +69,56 @@ elements:
               Incorrect. `display: inline` prevents the element from accepting width/height and vertical padding properly.
   - type: blank
     location:
-      context: "color: #16a34a;"
-      snippet: "#16a34a"
+      context: "flex-direction: column;"
+      snippet: "column"
       nth: 1
     choices:
-      - snippet: "#16a34a"
+      - snippet: "column"
         role: solution
         explanations:
           - body: |
-              Correct! `#16a34a` is a standard green color used to represent positive income / deposit transactions.
-      - snippet: "#dc2626"
+              Correct! `flex-direction: column` stacks the header, transaction feed, balance callout, and action buttons vertically.
+      - snippet: "row"
         role: distractor
         explanations:
           - body: |
-              Incorrect. `#dc2626` is red, which is conventionally reserved for withdrawals or debits.
-      - snippet: "#0f172a"
+              Incorrect. `flex-direction: row` aligns items horizontally side-by-side, which would break the vertical card layout.
+      - snippet: "column-reverse"
         role: distractor
         explanations:
           - body: |
-              Incorrect. `#0f172a` is the neutral dark text color used for headings, not for positive credits.
-      - snippet: "#ffffff"
+              Incorrect. `column-reverse` would invert the layout, placing the buttons at the top and the header at the bottom.
+      - snippet: "initial"
         role: distractor
         explanations:
           - body: |
-              Incorrect. Using white text on a white card background would make the deposit transaction invisible.
+              Incorrect. The initial value of `flex-direction` is `row`, which defaults to horizontal placement.
   - type: blank
     location:
-      context: "font-weight: 800;"
-      snippet: "800"
+      context: "cursor: pointer;"
+      snippet: "pointer"
       nth: 1
     choices:
-      - snippet: "800"
+      - snippet: "pointer"
         role: solution
         explanations:
           - body: |
-              Correct! `font-weight: 800` (Extra Bold) gives the balance text strong visual weight as the central card callout.
-      - snippet: "400"
+              Correct! `cursor: pointer` changes the mouse cursor to a pointing hand, signaling that the button is clickable.
+      - snippet: "default"
         role: distractor
         explanations:
           - body: |
-              Incorrect. `font-weight: 400` is normal body weight and fails to emphasize the balance callout.
-      - snippet: "300"
+              Incorrect. `cursor: default` displays the standard arrow cursor, providing no visual affordance that the element is clickable.
+      - snippet: "text"
         role: distractor
         explanations:
           - body: |
-              Incorrect. `font-weight: 300` is light weight, which makes the number look thin and deprioritized.
-      - snippet: "100"
+              Incorrect. `cursor: text` displays an I-beam text selection cursor, typically reserved for editable text inputs.
+      - snippet: "not-allowed"
         role: distractor
         explanations:
           - body: |
-              Incorrect. `font-weight: 100` (Thin) is difficult to read and lacks sufficient contrast.
+              Incorrect. `cursor: not-allowed` indicates a disabled state, which is misleading for active transaction buttons.
   - type: blank
     location:
       context: ".btn-deposit:hover"

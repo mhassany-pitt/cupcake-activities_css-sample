@@ -1,9 +1,9 @@
 $schema: https://learning-contents.org/schemas/multiple-choice-question/0.1.0
 license: MIT
 locale: en-US
-id: mcq_bank_account_deposit
-title: CSS Action Button Styling Rules
-description: Choose the correct CSS rule for styling the deposit button on the Bank Account card.
+id: mcq_bank_account_button_hover
+title: CSS Interactive Button Hover State Implementation
+description: Choose the correct CSS rule to style the interactive hover state of the deposit button.
 authors:
   - first: Jone
     last: Doe
@@ -14,21 +14,23 @@ pedagogy:
   difficulty: intermediate
   prereq_topics:
     - css3-basics
-    - box-model
+    - selectors
   topics:
     - css3
-    - styling
-    - color-contrast
+    - pseudo-classes
     - selectors
+    - interactivity
+    - transitions
 include_choices: 4
 question: |
-  Given the `BankAccount` card component, which of the following represents the correct standard CSS rule to style the primary deposit button (`.btn-deposit`) with a blue background and white text?
+  Given the `BankAccount` card component with a primary deposit button (`<button class="btn btn-deposit">`):
+  
+  Which of the following represents the correct CSS selector and rule to apply a darkened background color when the user hovers their mouse cursor over the deposit button?
 choices:
   - body: |
       ```css
-      .btn-deposit {
-        background-color: #2563eb;
-        color: #ffffff;
+      .btn-deposit:hover {
+        background-color: #1d4ed8;
       }
       ```
     role: solution
@@ -36,37 +38,34 @@ choices:
     order: 1
     explanations:
       - body: |
-          Correct! This rule sets `background-color` to `#2563eb` (primary blue) and `color` to `#ffffff` (white), providing high contrast and clear visual hierarchy.
+          Correct! The `:hover` pseudo-class selector dynamically matches an element when the user points to it with a cursor, successfully applying the darkened background color.
   - body: |
       ```css
-      .btn-deposit {
-        background-color: #ffffff;
-        color: #ffffff;
+      .btn-deposit.hover {
+        background-color: #1d4ed8;
       }
       ```
     role: distractor
     explanations:
       - body: |
-          Incorrect. Setting both background and foreground text colors to `#ffffff` renders the button label invisible.
+          Incorrect. `.btn-deposit.hover` attempts to match an element that has a literal class name `class="... hover"`, rather than the dynamic browser `:hover` pseudo-class.
   - body: |
       ```css
-      .btn-deposit {
-        text-color: #ffffff;
-        bg-color: #2563eb;
+      .btn-deposit::hover {
+        background-color: #1d4ed8;
       }
       ```
     role: distractor
     explanations:
       - body: |
-          Incorrect. `text-color` and `bg-color` are not valid standard CSS properties; the standard properties are `color` and `background-color`.
+          Incorrect. Double-colon syntax `::` is reserved for CSS pseudo-elements (e.g. `::before`, `::after`), whereas `:hover` is a state pseudo-class requiring a single colon `:`.
   - body: |
       ```css
-      .btn-deposit {
-        background: #2563eb;
-        font-color: #ffffff;
+      .btn-deposit:active {
+        background-color: #1d4ed8;
       }
       ```
     role: distractor
     explanations:
       - body: |
-          Incorrect. `font-color` is not a valid CSS property (the standard property for text color is simply `color`).
+          Incorrect. The `:active` pseudo-class only applies while the user is actively pressing and holding down the mouse button, not while simply hovering over the element.
