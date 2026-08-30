@@ -2,9 +2,9 @@ $schema: https://learning-contents.org/schemas/code-completion/0.1.0
 source: style.css
 license: MIT
 locale: en-US
-id: cc_bank_account_css
-title: Complete the Card Stylesheet
-description: Fill in the missing CSS Flexbox properties and styling attributes.
+id: cc_bank_account
+title: Complete the BankAccount CSS Rules
+description: Fill in essential CSS layout values, color tokens, typography weights, and pseudo-class selectors to style a bank account card.
 authors:
   - first: Jone
     last: Doe
@@ -13,55 +13,136 @@ authors:
 pedagogy:
   activity: code-completion
   difficulty: novice
-  prereq_topics: []
+  prereq_topics:
+    - css3-basics
+    - box-model
   topics:
     - css3
     - flexbox
+    - typography
+    - pseudo-classes
+    - transitions
+    - ui-components
 runtime:
   language: css
 statement: |
-  Complete the `BankAccount` card stylesheet by filling in the missing Flexbox properties and button colors. Focus on:
-  - Setting header alignment to push items to opposite ends (`space-between`)
-  - Specifying the primary button background color
+  Complete the `BankAccount` card styles by selecting the correct CSS values, hex colors, font weights, and pseudo-class selectors.
+  Make sure to:
+  1. Configure the card container as a Flexbox layout.
+  2. Apply the semantic green color for deposit transactions.
+  3. Set a bold font weight for the primary balance display.
+  4. Specify the interactive hover pseudo-class on the deposit button.
 executions:
-  - title: Evaluated Stylesheet
+  - title: Bob's Account
     stdin: []
     stdout: |-
-      CSS Evaluated: 1042 bytes
+      CSS Evaluated: 1309 bytes
     console: |-
-      CSS Evaluated: 1042 bytes
+      CSS Evaluated: 1309 bytes
     stderr: ""
     status: pass
 elements:
   - type: blank
     location:
-      context: "justify-content: space-between;"
-      snippet: "space-between"
+      context: "display: flex;"
+      snippet: "flex"
       nth: 1
     choices:
-      - snippet: "space-between"
+      - snippet: "flex"
         role: solution
         explanations:
           - body: |
-              `space-between` distributes child items evenly along the main axis, placing the first item on the leading edge and the last item on the trailing edge.
-      - snippet: "center"
+              Correct! `display: flex` establishes a Flexible Box layout context, enabling column direction and uniform gap spacing.
+      - snippet: "grid"
         role: distractor
         explanations:
           - body: |
-              `center` would pack both the owner heading and badge together in the center of the card header rather than separating them.
+              Incorrect. While `display: grid` creates a grid layout, the component uses Flexbox column properties.
+      - snippet: "block"
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. Standard block formatting does not support `gap: 16px` between direct child elements in the same way.
+      - snippet: "inline"
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. `display: inline` prevents the element from accepting width/height and vertical padding properly.
   - type: blank
     location:
-      context: "background-color: #2563eb;"
-      snippet: "#2563eb"
+      context: "color: #16a34a;"
+      snippet: "#16a34a"
       nth: 1
     choices:
-      - snippet: "#2563eb"
+      - snippet: "#16a34a"
         role: solution
         explanations:
           - body: |
-              `#2563eb` provides a vibrant, accessible primary blue hue for the deposit action button.
-      - snippet: "transparent"
+              Correct! `#16a34a` is a standard green color used to represent positive income / deposit transactions.
+      - snippet: "#dc2626"
         role: distractor
         explanations:
           - body: |
-              A `transparent` background with white text would make the button label invisible on light backgrounds.
+              Incorrect. `#dc2626` is red, which is conventionally reserved for withdrawals or debits.
+      - snippet: "#0f172a"
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. `#0f172a` is the neutral dark text color used for headings, not for positive credits.
+      - snippet: "#ffffff"
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. Using white text on a white card background would make the deposit transaction invisible.
+  - type: blank
+    location:
+      context: "font-weight: 800;"
+      snippet: "800"
+      nth: 1
+    choices:
+      - snippet: "800"
+        role: solution
+        explanations:
+          - body: |
+              Correct! `font-weight: 800` (Extra Bold) gives the balance text strong visual weight as the central card callout.
+      - snippet: "400"
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. `font-weight: 400` is normal body weight and fails to emphasize the balance callout.
+      - snippet: "300"
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. `font-weight: 300` is light weight, which makes the number look thin and deprioritized.
+      - snippet: "100"
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. `font-weight: 100` (Thin) is difficult to read and lacks sufficient contrast.
+  - type: blank
+    location:
+      context: ".btn-deposit:hover"
+      snippet: ":hover"
+      nth: 1
+    choices:
+      - snippet: ":hover"
+        role: solution
+        explanations:
+          - body: |
+              Correct! The `:hover` pseudo-class applies the darkened blue background when the user hovers their cursor over the button.
+      - snippet: ":active"
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. `:active` only applies while the user is actively pressing the mouse button down.
+      - snippet: ":focus"
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. `:focus` is triggered when an element receives keyboard focus, not purely cursor hover.
+      - snippet: ":visited"
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. `:visited` applies to anchor links that the user has previously navigated to in their browser history.

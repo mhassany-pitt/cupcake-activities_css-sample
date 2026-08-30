@@ -1,9 +1,9 @@
 $schema: https://learning-contents.org/schemas/multiple-choice-question/0.1.0
 license: MIT
 locale: en-US
-id: mcq_css_flexbox_alignment
-title: CSS Flexbox Header Alignment
-description: Choose the correct Flexbox property to distribute items with space between them.
+id: mcq_bank_account_deposit
+title: CSS Action Button Styling Rules
+description: Choose the correct CSS rule for styling the deposit button on the Bank Account card.
 authors:
   - first: Jone
     last: Doe
@@ -11,44 +11,62 @@ authors:
     affiliation: University of John Doe
 pedagogy:
   activity: multiple-choice-question
-  difficulty: novice
+  difficulty: intermediate
   prereq_topics:
-    - css3
+    - css3-basics
+    - box-model
   topics:
     - css3
-    - flexbox
-    - layout
-include_choices: 3
+    - styling
+    - color-contrast
+    - selectors
+include_choices: 4
 question: |
-  Given a flex container (`display: flex`), which property should be used along the main axis to push the first child to the far left and the last child to the far right?
+  Given the `BankAccount` card component, which of the following represents the correct standard CSS rule to style the primary deposit button (`.btn-deposit`) with a blue background and white text?
 choices:
   - body: |
       ```css
-      justify-content: space-between;
+      .btn-deposit {
+        background-color: #2563eb;
+        color: #ffffff;
+      }
       ```
     role: solution
     include: always
     order: 1
     explanations:
       - body: |
-          Correct. `justify-content: space-between` distributes remaining space evenly between the flex items, placing the outer items flush with the container edges.
+          Correct! This rule sets `background-color` to `#2563eb` (primary blue) and `color` to `#ffffff` (white), providing high contrast and clear visual hierarchy.
   - body: |
       ```css
-      align-items: space-between;
+      .btn-deposit {
+        background-color: #ffffff;
+        color: #ffffff;
+      }
       ```
     role: distractor
     explanations:
       - body: |
-          Incorrect. `align-items` operates along the cross axis (vertically in row layout) and does not support `space-between` in standard single-line flex containers.
+          Incorrect. Setting both background and foreground text colors to `#ffffff` renders the button label invisible.
   - body: |
       ```css
-      justify-content: center;
+      .btn-deposit {
+        text-color: #ffffff;
+        bg-color: #2563eb;
+      }
       ```
     role: distractor
     explanations:
       - body: |
-          Incorrect. `justify-content: center` clusters all children together in the middle of the container rather than separating them to opposite edges.
-  - body: None
+          Incorrect. `text-color` and `bg-color` are not valid standard CSS properties; the standard properties are `color` and `background-color`.
+  - body: |
+      ```css
+      .btn-deposit {
+        background: #2563eb;
+        font-color: #ffffff;
+      }
+      ```
     role: distractor
-    include: always
-    order: 2
+    explanations:
+      - body: |
+          Incorrect. `font-color` is not a valid CSS property (the standard property for text color is simply `color`).

@@ -1,10 +1,10 @@
 $schema: https://learning-contents.org/schemas/parsons-puzzles/0.1.0
 license: MIT
 locale: en-US
-id: pp_bank_account_css
+id: pp_bank_account
 source: style.css
-title: Arrange the Card Stylesheet
-description: Arrange the CSS rule blocks to style the Bank Account UI card.
+title: Bank Account Card CSS Rules
+description: Rearrange the CSS rule blocks to construct a clean, modern bank account card design with Flexbox, typography scales, color coding, and button hover states.
 authors:
   - first: Jone
     last: Doe
@@ -13,26 +13,38 @@ authors:
 pedagogy:
   activity: parsons-puzzles
   difficulty: novice
-  prereq_topics: [css3, rules]
-  topics: [css3, rules, selectors]
+  prereq_topics:
+    - css3-basics
+    - box-model
+  topics:
+    - css3
+    - flexbox
+    - typography
+    - pseudo-classes
+    - transitions
+    - ui-components
 runtime:
   language: css
 statement: |
-  Rearrange the CSS rule blocks to construct a clean, well-ordered stylesheet. Make sure to:
-  1. Define the card container layout (`.bank-card`)
-  2. Define the header alignment (`.account-header`)
-  3. Define the action button styling (`.account-actions`)
+  Rearrange the CSS rule blocks to correctly style the `BankAccount` card component.
+  Make sure to:
+  1. Define the card container layout (`.bank-account`).
+  2. Style the deposit and withdrawal transaction records (`.transaction-deposit`, `.transaction-withdraw`).
+  3. Style the balance callout (`.balance-output`).
+  4. Style the action buttons and hover pseudo-classes (`.btn-deposit`, `.btn-withdraw`).
 executions:
-  - title: Evaluated Stylesheet
+  - title: Standard Transaction
     stdout: |-
-      CSS Evaluated: 1042 bytes
+      CSS Evaluated: 1309 bytes
     console: |-
-      CSS Evaluated: 1042 bytes
+      CSS Evaluated: 1309 bytes
+    status: pass
 elements:
   - type: block
+    group: css-rules
     location:
-      snippet: |2-
-        .bank-card {
+      snippet: |-
+        .bank-account {
           max-width: 360px;
           background: #ffffff;
           border: 1px solid #e2e8f0;
@@ -45,7 +57,7 @@ elements:
         }
     choices:
       - snippet: |-
-          .bank-card {
+          .bank-account {
             max-width: 360px;
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -59,49 +71,155 @@ elements:
         role: solution
         explanations:
           - body: |
-              Correctly defines dimensions, border radius, shadow, and vertical Flexbox layout for the card.
-  - type: block
-    location:
-      snippet: |2-
-        .account-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-    choices:
+              Correct! Sets up the card container with 360px max width, border radius, subtle shadow, and vertical Flexbox layout.
       - snippet: |-
-          .account-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          }
-        role: solution
-        explanations:
-          - body: |
-              Correctly aligns the header elements using Flexbox `space-between` and `align-items: center`.
-  - type: block
-    location:
-      snippet: |2-
-        .account-actions {
-          display: flex;
-          gap: 8px;
-        }
-    choices:
-      - snippet: |-
-          .account-actions {
-            display: flex;
-            gap: 8px;
-          }
-        role: solution
-        explanations:
-          - body: |
-              Correctly aligns the action buttons side-by-side with an `8px` gap.
-      - snippet: |-
-          .account-actions {
-            display: block;
-            float: left;
+          .bank-account {
+            max-width: 360px;
+            background: #ffffff;
+            display: inline;
           }
         role: distractor
         explanations:
           - body: |
-              Legacy CSS floats are fragile and prone to collapse; modern responsive web layout uses Flexbox or CSS Grid.
+              Incorrect. Setting `display: inline` disables block container behavior and breaks internal Flexbox item layout.
+  - type: block
+    group: css-rules
+    location:
+      snippet: |-
+        .transaction-deposit {
+          margin: 0;
+          color: #16a34a;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+
+        .transaction-withdraw {
+          margin: 0;
+          color: #dc2626;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+    choices:
+      - snippet: |-
+          .transaction-deposit {
+            margin: 0;
+            color: #16a34a;
+            font-weight: 600;
+            font-size: 0.9rem;
+          }
+
+          .transaction-withdraw {
+            margin: 0;
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 0.9rem;
+          }
+        role: solution
+        explanations:
+          - body: |
+              Correct! Renders deposits in green (`#16a34a`) and withdrawals in red (`#dc2626`).
+      - snippet: |-
+          .transaction-deposit {
+            margin: 0;
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 0.9rem;
+          }
+
+          .transaction-withdraw {
+            margin: 0;
+            color: #16a34a;
+            font-weight: 600;
+            font-size: 0.9rem;
+          }
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. The color assignments are inverted: deposits are styled red and withdrawals green!
+  - type: block
+    group: css-rules
+    location:
+      snippet: |-
+        .balance-output {
+          margin: 0;
+          font-size: 1.5rem;
+          font-weight: 800;
+          color: #1e293b;
+        }
+    choices:
+      - snippet: |-
+          .balance-output {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1e293b;
+          }
+        role: solution
+        explanations:
+          - body: |
+              Correct! Accentuates the balance with `font-size: 1.5rem` and `font-weight: 800`.
+      - snippet: |-
+          .balance-output {
+            font-size: 0.75rem;
+            font-weight: 200;
+          }
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. Thin and tiny typography degrades the visual hierarchy of the main balance readout.
+  - type: block
+    group: css-rules
+    location:
+      snippet: |-
+        .btn-deposit {
+          background-color: #2563eb;
+          color: #ffffff;
+        }
+
+        .btn-deposit:hover {
+          background-color: #1d4ed8;
+        }
+
+        .btn-withdraw {
+          background-color: #f1f5f9;
+          color: #334155;
+        }
+
+        .btn-withdraw:hover {
+          background-color: #e2e8f0;
+        }
+    choices:
+      - snippet: |-
+          .btn-deposit {
+            background-color: #2563eb;
+            color: #ffffff;
+          }
+
+          .btn-deposit:hover {
+            background-color: #1d4ed8;
+          }
+
+          .btn-withdraw {
+            background-color: #f1f5f9;
+            color: #334155;
+          }
+
+          .btn-withdraw:hover {
+            background-color: #e2e8f0;
+          }
+        role: solution
+        explanations:
+          - body: |
+              Correct! Configures colors and hover feedback for the deposit and withdraw action buttons.
+      - snippet: |-
+          .btn-deposit {
+            float: left;
+          }
+
+          .btn-withdraw {
+            float: right;
+          }
+        role: distractor
+        explanations:
+          - body: |
+              Incorrect. Using float-based positioning is an outdated and brittle technique compared to Flexbox button groupings.

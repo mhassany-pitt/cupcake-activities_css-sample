@@ -2,9 +2,9 @@ $schema: https://learning-contents.org/schemas/free-coding/0.1.0
 source: style.css
 license: MIT
 locale: en-US
-id: free_coding_bank_account_css
-title: Customize the Card Styling
-description: Style and customize colors, typography, and hover effects in CSS.
+id: free_coding_bank_account
+title: Bank Account Card Styling in CSS3
+description: Write CSS rules for transactions, balance displays, and action button hover states in a BankAccount card component.
 authors:
   - first: Jone
     last: Doe
@@ -13,25 +13,36 @@ authors:
 pedagogy:
   activity: free-coding
   difficulty: novice
-  prereq_topics: [css3]
-  topics: [css3, styling, colors]
+  prereq_topics:
+    - css3-basics
+    - box-model
+  topics:
+    - css3
+    - flexbox
+    - typography
+    - pseudo-classes
+    - transitions
+    - ui-components
 runtime:
   language: css
 statement: |
-  Customize the `BankAccount` card stylesheet by editing the button colors and padding properties.
+  Write the CSS rules to complete the `BankAccount` card component:
+  1. Add `.account-transactions` (Flexbox column with `gap: 8px`), `.transaction-deposit` (`color: #16a34a`), and `.transaction-withdraw` (`color: #dc2626`).
+  2. Add `.account-balance` (Flexbox column with `gap: 4px`) and `.balance-output` (`font-size: 1.5rem`, `font-weight: 800`, `color: #1e293b`).
+  3. Add `.account-actions` (Flexbox row with `gap: 8px`), `.btn` base styles with transitions, and custom styles for `.btn-deposit` / `.btn-deposit:hover` and `.btn-withdraw` / `.btn-withdraw:hover`.
 executions:
-  - title: Evaluated Stylesheet
+  - title: Standard Transaction Styling
     stdin: []
     stdout: |-
-      CSS Evaluated: 1042 bytes
+      CSS Evaluated: 1309 bytes
     console: |-
-      CSS Evaluated: 1042 bytes
+      CSS Evaluated: 1309 bytes
     status: pass
 elements:
   - type: locked
     location:
       snippet: |-
-        .bank-card {
+        .bank-account {
           max-width: 360px;
           background: #ffffff;
           border: 1px solid #e2e8f0;
@@ -42,9 +53,70 @@ elements:
           flex-direction: column;
           gap: 16px;
         }
+
+        .account-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .account-owner {
+          margin: 0;
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #0f172a;
+        }
   - type: editable
     location:
       snippet: |-
+        .account-transactions {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .transaction-deposit {
+          margin: 0;
+          color: #16a34a;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+
+        .transaction-withdraw {
+          margin: 0;
+          color: #dc2626;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+
+        .account-balance {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .balance-output {
+          margin: 0;
+          font-size: 1.5rem;
+          font-weight: 800;
+          color: #1e293b;
+        }
+
+        .account-actions {
+          display: flex;
+          gap: 8px;
+        }
+
+        .btn {
+          flex: 1;
+          padding: 8px 16px;
+          border-radius: 6px;
+          font-weight: 600;
+          cursor: pointer;
+          border: none;
+          transition: all 0.2s ease;
+        }
+
         .btn-deposit {
           background-color: #2563eb;
           color: #ffffff;
@@ -63,12 +135,17 @@ elements:
           background-color: #e2e8f0;
         }
     placeholder: |-
-      /* Customize deposit and withdraw button styles here */
+      /* 1. Transaction section and item styles */
+
+      /* 2. Balance section and callout styles */
+
+      /* 3. Button group and interactive hover styles */
 testcases:
-  - title: Stylesheet Compilation Test
+  - title: Standard Component Styling
     visible: true
     stdin: []
     stdout: |-
-      CSS Evaluated: 1042 bytes
+      CSS Evaluated: 1309 bytes
     console: |-
-      CSS Evaluated: 1042 bytes
+      CSS Evaluated: 1309 bytes
+    status: pass

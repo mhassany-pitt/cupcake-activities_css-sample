@@ -2,9 +2,9 @@ $schema: https://learning-contents.org/schemas/worked-example/0.1.0
 source: style.css
 license: MIT
 locale: en-US
-id: we_bank_account_css
-title: Bank Account Card Styling
-description: Learn how to use modern CSS Flexbox and styling properties to style a Bank Account UI card.
+id: we_bank_account
+title: Bank Account Card Styling in CSS3
+description: Learn how to style a modern, accessible bank account UI card using CSS3 Flexbox layout, typography scales, semantic color coding, and pseudo-class transitions.
 authors:
   - first: Jone
     last: Doe
@@ -13,36 +13,115 @@ authors:
 pedagogy:
   activity: worked-example
   difficulty: novice
-  prereq_topics: []
+  prereq_topics:
+    - css3-basics
+    - box-model
   topics:
     - css3
     - flexbox
-    - styling
+    - typography
+    - pseudo-classes
+    - transitions
+    - ui-components
 runtime:
   language: css
 statement: |
-  This worked example demonstrates how to style a **Bank Account Card** component in CSS3 using Flexbox layout, typography, and interactive button states. We will examine:
-  1. Card container layout and borders (`.bank-card`)
-  2. Space-between alignment in headers (`.account-header`)
-  3. Interactive buttons and hover effects (`.btn-deposit`)
+  This worked example demonstrates how `BankAccount` card visual design and layout are constructed using modern CSS3. We'll examine:
+  1. The card container layout with Flexbox (`display: flex`, `gap: 16px`), border radii, and soft shadows.
+  2. Account owner typography and heading styling.
+  3. Transaction feed styling using semantic green (`#16a34a`) for deposits and red (`#dc2626`) for withdrawals.
+  4. Balance text prominence using heavy `font-weight: 800`.
+  5. Action button color schemes, interactive `:hover` pseudo-classes, and smooth `transition` timing.
 executions:
-  - title: Evaluated Stylesheet
+  - title: Bob's Account
     stdin: []
     stdout: |-
-      CSS Evaluated: 1042 bytes
+      CSS Evaluated: 1309 bytes
     console: |-
-      CSS Evaluated: 1042 bytes
+      CSS Evaluated: 1309 bytes
     status: pass
 elements:
   - type: explanation
     location:
-      snippet: "display: flex;\n  flex-direction: column;\n  gap: 16px;"
+      snippet: |-
+        .bank-account {
+          max-width: 360px;
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 12px;
+          padding: 20px;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
     explanations:
       - body: |
-          Using `display: flex` combined with `flex-direction: column` and `gap: 16px` automatically stacks internal sections vertically with consistent spacing between each child element.
+          ### 1. Card Container Layout
+          * `display: flex` and `flex-direction: column`: Organizes child sections vertically.
+          * `gap: 16px`: Provides uniform vertical spacing between child sections without cumbersome margin collapsing.
+          * `border-radius: 12px` and `box-shadow`: Creates a modern elevated card container with rounded corners.
   - type: explanation
     location:
-      snippet: "display: flex;\n  justify-content: space-between;\n  align-items: center;"
+      snippet: |-
+        .account-owner {
+          margin: 0;
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #0f172a;
+        }
     explanations:
       - body: |
-          `justify-content: space-between` pushes the account owner name to the left and the active status badge to the far right, while `align-items: center` centers them along the vertical axis.
+          ### 2. Heading Typography
+          * `font-size: 1.25rem` and `font-weight: 700`: Renders the account owner name with strong visual hierarchy.
+          * `color: #0f172a`: Uses a dark slate color for high-contrast, accessible readability.
+  - type: explanation
+    location:
+      snippet: |-
+        .transaction-deposit {
+          margin: 0;
+          color: #16a34a;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+
+        .transaction-withdraw {
+          margin: 0;
+          color: #dc2626;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+    explanations:
+      - body: |
+          ### 3. Transaction Color Coding
+          * `.transaction-deposit`: Uses green (`#16a34a`) to visually communicate positive incoming credits.
+          * `.transaction-withdraw`: Uses red (`#dc2626`) to clearly indicate outgoing debits.
+  - type: explanation
+    location:
+      snippet: |-
+        .balance-output {
+          margin: 0;
+          font-size: 1.5rem;
+          font-weight: 800;
+          color: #1e293b;
+        }
+    explanations:
+      - body: |
+          ### 4. Balance Callout
+          * `font-size: 1.5rem` and `font-weight: 800`: Makes the final account balance the primary visual anchor on the card.
+  - type: explanation
+    location:
+      snippet: |-
+        .btn-deposit {
+          background-color: #2563eb;
+          color: #ffffff;
+        }
+
+        .btn-deposit:hover {
+          background-color: #1d4ed8;
+        }
+    explanations:
+      - body: |
+          ### 5. Button Styling and Hover States
+          * `background-color: #2563eb`: Uses primary blue for the call-to-action button with white text.
+          * `.btn-deposit:hover`: Darkens the background to `#1d4ed8` on user cursor hover, paired with `transition: all 0.2s ease` on `.btn` for smooth interactive feedback.

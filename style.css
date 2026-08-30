@@ -1,4 +1,4 @@
-.bank-card {
+.bank-account {
   max-width: 360px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -23,30 +23,35 @@
   color: #0f172a;
 }
 
-.account-badge {
-  background-color: #dcfce7;
-  color: #15803d;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 9999px;
+.account-transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.account-body {
+.transaction-deposit {
+  margin: 0;
+  color: #16a34a;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.transaction-withdraw {
+  margin: 0;
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.account-balance {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.balance-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: #64748b;
-  letter-spacing: 0.05em;
-}
-
-.balance-amount {
-  font-size: 1.75rem;
+.balance-output {
+  margin: 0;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #1e293b;
 }

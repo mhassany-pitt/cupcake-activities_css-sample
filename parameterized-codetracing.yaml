@@ -1,24 +1,37 @@
 $schema: https://learning-contents.org/schemas/parameterized-code-tracing/0.1.0
 license: MIT
 locale: en-US
-id: parameterized_code_tracing_css
+id: parameterized_code_tracing_bank_account
 source: style.css
-title: Parameterized CSS Style Inspection
-description: Trace and inspect CSS color values and layout properties.
+title: Trace CSS Bank Account Card Properties
+description: Trace and inspect the evaluated CSS property values as container width, transaction colors, and button themes vary.
 authors:
-  - first: First
-    last: Last
-    email: author@example.com
-    affiliation: University
+  - first: Jone
+    last: Doe
+    email: jone.doe@example.com
+    affiliation: University of John Doe
 pedagogy:
   activity: parameterized-code-tracing
   difficulty: novice
-  prereq_topics: [basics]
-  topics: [basics, css3, flexbox]
+  prereq_topics:
+    - css3-basics
+    - box-model
+  topics:
+    - css3
+    - flexbox
+    - typography
+    - pseudo-classes
+    - transitions
+    - ui-components
+    - state-tracing
 runtime:
   language: css
 statement: |
-  Determine the evaluated stylesheet metrics and inspect the CSS properties for the Bank Account card.
+  Inspect the CSS properties for the Bank Account card stylesheet.
+  Pay close attention to:
+  * The maximum width of the card container (`.bank-account`).
+  * The text color of the deposit transaction (`.transaction-deposit`).
+  * The background color of the deposit action button (`.btn-deposit`).
 elements:
   - type: parameter
     location:
@@ -27,6 +40,11 @@ elements:
     values: ['360px', '400px', '480px']
   - type: parameter
     location:
+      context: 'color: #16a34a;'
+      snippet: "#16a34a"
+    values: ['#16a34a', '#22c55e', '#15803d']
+  - type: parameter
+    location:
       context: 'background-color: #2563eb;'
       snippet: "#2563eb"
-    values: ['#2563eb', '#16a34a', '#7c3aed']
+    values: ['#2563eb', '#1d4ed8', '#3b82f6']
