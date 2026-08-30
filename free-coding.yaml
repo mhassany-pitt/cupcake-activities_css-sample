@@ -134,9 +134,7 @@ elements:
         }
     placeholder: |-
       /* 1. Transaction section and item styles */
-
       /* 2. Balance section and callout styles */
-
       /* 3. Button group and interactive hover styles */
 testcases:
   - title: Standard Component Styling
