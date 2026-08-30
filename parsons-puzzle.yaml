@@ -116,24 +116,6 @@ elements:
         explanations:
           - body: |
               Correct! Renders deposits in green (`#16a34a`) and withdrawals in red (`#dc2626`).
-      - snippet: |-
-          .transaction-deposit {
-            margin: 0;
-            color: #dc2626;
-            font-weight: 600;
-            font-size: 0.9rem;
-          }
-
-          .transaction-withdraw {
-            margin: 0;
-            color: #16a34a;
-            font-weight: 600;
-            font-size: 0.9rem;
-          }
-        role: distractor
-        explanations:
-          - body: |
-              Incorrect. The color assignments are inverted: deposits are styled red and withdrawals green!
   - type: block
     group: css-rules
     location:
@@ -156,15 +138,6 @@ elements:
         explanations:
           - body: |
               Correct! Accentuates the balance with `font-size: 1.5rem` and `font-weight: 800`.
-      - snippet: |-
-          .balance-output {
-            font-size: 0.75rem;
-            font-weight: 200;
-          }
-        role: distractor
-        explanations:
-          - body: |
-              Incorrect. Thin and tiny typography degrades the visual hierarchy of the main balance readout.
   - type: block
     group: css-rules
     location:
@@ -209,15 +182,3 @@ elements:
         explanations:
           - body: |
               Correct! Configures colors and hover feedback for the deposit and withdraw action buttons.
-      - snippet: |-
-          .btn-deposit {
-            float: left;
-          }
-
-          .btn-withdraw {
-            float: right;
-          }
-        role: distractor
-        explanations:
-          - body: |
-              Incorrect. Using float-based positioning is an outdated and brittle technique compared to Flexbox button groupings.
