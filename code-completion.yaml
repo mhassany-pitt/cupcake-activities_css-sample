@@ -34,113 +34,111 @@ statement: |
 executions:
   - title: Bob's Account
     stdin: []
-    stdout: |-
-      CSS Evaluated: 1309 bytes
-    console: |-
-      CSS Evaluated: 1309 bytes
-    stderr: ""
+    stdout: 'CSS Evaluated: 1309 bytes'
+    console: 'CSS Evaluated: 1309 bytes'
+    stderr: ''
     status: pass
 elements:
   - type: blank
     location:
-      context: "display: flex;"
-      snippet: "flex"
+      context: 'display: flex;'
+      snippet: flex
       nth: 1
     choices:
-      - snippet: "flex"
+      - snippet: flex
         role: solution
         explanations:
           - body: |
               Correct! `display: flex` establishes a Flexible Box layout context, enabling flex direction and uniform gap spacing.
-      - snippet: "grid"
+      - snippet: grid
         role: distractor
         explanations:
           - body: |
               Incorrect. While `display: grid` creates a grid layout, the component uses Flexbox column properties.
-      - snippet: "block"
+      - snippet: block
         role: distractor
         explanations:
           - body: |
               Incorrect. Standard block formatting does not support `gap: 16px` between direct child elements in the same way.
-      - snippet: "inline"
+      - snippet: inline
         role: distractor
         explanations:
           - body: |
               Incorrect. `display: inline` prevents the element from accepting width/height and vertical padding properly.
   - type: blank
     location:
-      context: "flex-direction: column;"
-      snippet: "column"
+      context: 'flex-direction: column;'
+      snippet: column
       nth: 1
     choices:
-      - snippet: "column"
+      - snippet: column
         role: solution
         explanations:
           - body: |
               Correct! `flex-direction: column` stacks the header, transaction feed, balance callout, and action buttons vertically.
-      - snippet: "row"
+      - snippet: row
         role: distractor
         explanations:
           - body: |
               Incorrect. `flex-direction: row` aligns items horizontally side-by-side, which would break the vertical card layout.
-      - snippet: "column-reverse"
+      - snippet: column-reverse
         role: distractor
         explanations:
           - body: |
               Incorrect. `column-reverse` would invert the layout, placing the buttons at the top and the header at the bottom.
-      - snippet: "initial"
+      - snippet: initial
         role: distractor
         explanations:
           - body: |
               Incorrect. The initial value of `flex-direction` is `row`, which defaults to horizontal placement.
   - type: blank
     location:
-      context: "cursor: pointer;"
-      snippet: "pointer"
+      context: 'cursor: pointer;'
+      snippet: pointer
       nth: 1
     choices:
-      - snippet: "pointer"
+      - snippet: pointer
         role: solution
         explanations:
           - body: |
               Correct! `cursor: pointer` changes the mouse cursor to a pointing hand, signaling that the button is clickable.
-      - snippet: "default"
+      - snippet: default
         role: distractor
         explanations:
           - body: |
               Incorrect. `cursor: default` displays the standard arrow cursor, providing no visual affordance that the element is clickable.
-      - snippet: "text"
+      - snippet: text
         role: distractor
         explanations:
           - body: |
               Incorrect. `cursor: text` displays an I-beam text selection cursor, typically reserved for editable text inputs.
-      - snippet: "not-allowed"
+      - snippet: not-allowed
         role: distractor
         explanations:
           - body: |
               Incorrect. `cursor: not-allowed` indicates a disabled state, which is misleading for active transaction buttons.
   - type: blank
     location:
-      context: ".btn-deposit:hover"
-      snippet: ":hover"
+      context: .btn-deposit:hover
+      snippet: :hover
       nth: 1
     choices:
-      - snippet: ":hover"
+      - snippet: :hover
         role: solution
         explanations:
           - body: |
               Correct! The `:hover` pseudo-class applies the darkened blue background when the user hovers their cursor over the button.
-      - snippet: ":active"
+      - snippet: :active
         role: distractor
         explanations:
           - body: |
               Incorrect. `:active` only applies while the user is actively pressing the mouse button down.
-      - snippet: ":focus"
+      - snippet: :focus
         role: distractor
         explanations:
           - body: |
               Incorrect. `:focus` is triggered when an element receives keyboard focus, not purely cursor hover.
-      - snippet: ":visited"
+      - snippet: :visited
         role: distractor
         explanations:
           - body: |

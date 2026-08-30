@@ -36,15 +36,24 @@ elements:
   - type: parameter
     location:
       context: 'max-width: 360px;'
-      snippet: "360px"
-    values: ['360px', '400px', '480px']
+      snippet: 360px
+    values:
+      - 360px
+      - 400px
+      - 480px
   - type: parameter
     location:
       context: 'color: #16a34a;'
-      snippet: "#16a34a"
-    values: ['#16a34a', '#22c55e', '#15803d']
+      snippet: '#16a34a'
+    values:
+      - '#16a34a'
+      - '#22c55e'
+      - '#15803d'
   - type: parameter
     location:
       context: 'background-color: #2563eb;'
-      snippet: "#2563eb"
-    values: ['#2563eb', '#1d4ed8', '#3b82f6']
+      snippet: '#2563eb'
+    values:
+      - '#2563eb'
+      - '#1d4ed8'
+      - '#3b82f6'

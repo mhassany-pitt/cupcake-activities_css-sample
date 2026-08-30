@@ -35,10 +35,8 @@ statement: |
 executions:
   - title: Bob's Account
     stdin: []
-    stdout: |-
-      CSS Evaluated: 1309 bytes
-    console: |-
-      CSS Evaluated: 1309 bytes
+    stdout: 'CSS Evaluated: 1309 bytes'
+    console: 'CSS Evaluated: 1309 bytes'
     status: pass
 elements:
   - type: explanation
