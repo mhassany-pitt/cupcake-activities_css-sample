@@ -25,6 +25,7 @@ pedagogy:
     - ui-components
 runtime:
   language: css
+  version: 3
 statement: |
   Rearrange the CSS rule blocks to correctly style the `BankAccount` card component.
   Make sure to:
@@ -32,11 +33,23 @@ statement: |
   2. Style the deposit and withdrawal transaction records (`.transaction-deposit`, `.transaction-withdraw`).
   3. Style the balance callout (`.balance-output`).
   4. Style the action buttons and hover pseudo-classes (`.btn-deposit`, `.btn-withdraw`).
-executions:
+testcases:
   - title: Standard Transaction
-    stdout: 'CSS Evaluated: 1309 bytes'
-    console: 'CSS Evaluated: 1309 bytes'
+    visible: true
+    stdin: []
+    stdout: "CSS Evaluated: 1309 bytes"
+    console: "CSS Evaluated: 1309 bytes"
     status: pass
+    hints:
+      - "Arrange the code blocks in logical sequential order from initialization to final output."
+      - "Ensure correct block indentation where applicable."
+    feedback:
+      - on_pass:
+          - explanations:
+              - "Correct! All blocks are sequenced properly to produce the expected output."
+        on_fail:
+          - explanations:
+              - "The block ordering or indentation is incorrect. Re-examine the flow of execution."
 elements:
   - type: block
     group: css-rules
@@ -67,6 +80,7 @@ elements:
             gap: 16px;
           }
         role: solution
+        indent: 0
         explanations:
           - body: |
               Correct! Sets up the card container with 360px max width, border radius, subtle shadow, and vertical Flexbox layout.
@@ -113,6 +127,7 @@ elements:
             font-size: 0.9rem;
           }
         role: solution
+        indent: 0
         explanations:
           - body: |
               Correct! Renders deposits in green (`#16a34a`) and withdrawals in red (`#dc2626`).
@@ -135,6 +150,7 @@ elements:
             color: #1e293b;
           }
         role: solution
+        indent: 0
         explanations:
           - body: |
               Correct! Accentuates the balance with `font-size: 1.5rem` and `font-weight: 800`.
@@ -179,6 +195,7 @@ elements:
             background-color: #e2e8f0;
           }
         role: solution
+        indent: 0
         explanations:
           - body: |
               Correct! Configures colors and hover feedback for the deposit and withdraw action buttons.

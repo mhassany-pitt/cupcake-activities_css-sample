@@ -25,17 +25,12 @@ pedagogy:
     - ui-components
 runtime:
   language: css
+  version: 3
 statement: |
   Write the CSS rules to complete the `BankAccount` card component:
   1. Add `.account-transactions` (Flexbox column with `gap: 8px`), `.transaction-deposit` (`color: #16a34a`), and `.transaction-withdraw` (`color: #dc2626`).
   2. Add `.account-balance` (Flexbox column with `gap: 4px`) and `.balance-output` (`font-size: 1.5rem`, `font-weight: 800`, `color: #1e293b`).
   3. Add `.account-actions` (Flexbox row with `gap: 8px`), `.btn` base styles with transitions, and custom styles for `.btn-deposit` / `.btn-deposit:hover` and `.btn-withdraw` / `.btn-withdraw:hover`.
-executions:
-  - title: Standard Transaction Styling
-    stdin: []
-    stdout: 'CSS Evaluated: 1309 bytes'
-    console: 'CSS Evaluated: 1309 bytes'
-    status: pass
 elements:
   - type: locked
     location:
@@ -143,3 +138,13 @@ testcases:
     stdout: 'CSS Evaluated: 1309 bytes'
     console: 'CSS Evaluated: 1309 bytes'
     status: pass
+    hints:
+      - "Review the problem statement and ensure the steps are executed in order."
+      - "Verify that initial values, deposits, withdrawals, and prints match the specification."
+    feedback:
+      - on_pass:
+          - explanations:
+              - "Great job! Your solution executed properly and matched all expected outputs."
+        on_fail:
+          - explanations:
+              - "Your code produced differing output. Double-check your method calls and printed formatting."

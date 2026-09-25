@@ -26,12 +26,30 @@ pedagogy:
     - state-tracing
 runtime:
   language: css
+  version: 3
 statement: |
   Inspect the CSS properties for the Bank Account card stylesheet.
   Pay close attention to:
   * The maximum width of the card container (`.bank-account`).
   * The text color of the deposit transaction (`.transaction-deposit`).
   * The background color of the deposit action button (`.btn-deposit`).
+testcases:
+  - title: Standard Trace Execution
+    visible: true
+    stdin: []
+    stdout: "CSS Evaluated: 1309 bytes"
+    console: "CSS Evaluated: 1309 bytes"
+    status: pass
+    hints:
+      - "Trace the parameter values step-by-step through each statement."
+      - "Check if the withdrawal amount exceeds the balance to determine which branch executes."
+    feedback:
+      - on_pass:
+          - explanations:
+              - "Correct trace! You tracked the state transitions and outputs accurately."
+        on_fail:
+          - explanations:
+              - "Your trace output did not match. Trace each parameter update carefully."
 elements:
   - type: parameter
     location:

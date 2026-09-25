@@ -24,6 +24,7 @@ pedagogy:
     - interactivity
 runtime:
   language: css
+  version: 3
 statement: |
   Complete the `BankAccount` card styles by selecting the correct CSS layout properties, axis directions, interactive cursor cues, and pseudo-class selectors.
   Make sure to:
@@ -31,13 +32,23 @@ statement: |
   2. Set the main layout axis to stack child sections vertically.
   3. Set the button cursor style to indicate interactivity.
   4. Specify the interactive hover pseudo-class on the deposit button.
-executions:
+testcases:
   - title: Bob's Account
+    visible: true
     stdin: []
-    stdout: 'CSS Evaluated: 1309 bytes'
-    console: 'CSS Evaluated: 1309 bytes'
-    stderr: ''
+    stdout: "CSS Evaluated: 1309 bytes"
+    console: "CSS Evaluated: 1309 bytes"
     status: pass
+    hints:
+      - "Review the blanks and ensure the operations match the expected transaction flow."
+      - "Pay attention to conditional checks and return or print statements."
+    feedback:
+      - on_pass:
+          - explanations:
+              - "Great job! All blanks were completed correctly and produced the expected output."
+        on_fail:
+          - explanations:
+              - "One or more blanks are incorrect. Check the expected output and verify your selections."
 elements:
   - type: blank
     location:
